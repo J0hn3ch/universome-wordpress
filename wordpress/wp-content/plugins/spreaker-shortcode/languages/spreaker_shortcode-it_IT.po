@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: PhraseApp (phraseapp.com)\n"
+
+#. Description of the plugin/theme
+msgid "A simple and easy way to embed Spreaker widgets into your WordPress blog. A simple example: \"[spreaker type=player resource=\"episode_id=3331356\"]\". More options in the plugin page. If you need further help, please contact us at <a href=\"http://help.spreaker.com\">help.spreaker.com</a>."
+msgstr "Un modo semplice per incorporare i player di Spreaker nel tuo blog WordPress. Un semplice esempio: \"[spreaker type=player resource=\"episode_id=3331356\"]\". Puoi trovare altre opzioni nella pagina del plugin. Per maggiori info contattaci a <a href=\"http://help.spreaker.com\">help.spreaker.com</a>."
+
+#: spreaker_shortcode.php:14
+msgid "Error"
+msgstr "Errore"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/spreaker-shortcode/"
+msgstr "https://wordpress.org/plugins/spreaker-shortcode/"
+
+#. Author URI of the plugin/theme
+msgid "https://www.spreaker.com"
+msgstr "https://www.spreaker.com"
+
+#. Author of the plugin/theme
+msgid "Spreaker"
+msgstr "Spreaker"
+
+#. Plugin Name of the plugin/theme
+msgid "Spreaker Shortcode"
+msgstr "Spreaker Shortcode"
+
+#: spreaker_shortcode.php:82
+msgid "The resource attribute (user_id, show_id or episode_id) is missing from the embed code."
+msgstr "L'attributo resource (user_id, show_id or episode_id) non è presente nel codice embed."
+
+#: spreaker_shortcode.php:127
+msgid "The resource attribute is invalid."
+msgstr "L'attributo resource non è valido."
+
+#: spreaker_shortcode.php:121
+msgid "The resource attribute is missing from the embed code."
+msgstr "La risorsa attributo non è presente nel codice embed"
+
+#: spreaker_shortcode.php:154
+msgid "The type attribute is missing."
+msgstr "L'attributo type non è presente."
+
+#: spreaker_shortcode.php:166
+msgid "The widget type is unsupported."
+msgstr "Il tipo di player non è supportato."

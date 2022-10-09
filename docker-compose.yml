@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  # ==== FTWS, a Fully of Threat Web Site with Apache and MySQL ====
+  website:
+    container_name: wordpress
+    build: .
+    volumes:
+      - ./wordpress:/srv/wordpress
+#    depends_on:
+#      - db
+    ports:
+      - "8000:80"
+  
+  db:
+    container_name: wordpress_db
+    image: mysql
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: WordPress2022
+      MYSQL_USER: dbadmin_wordpress
+      MYSQL_PASSWORD: WP2022
+      MYSQL_DATABASE: wordpress_db
+
+
