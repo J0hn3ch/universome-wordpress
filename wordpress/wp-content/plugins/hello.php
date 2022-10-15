@@ -12,9 +12,22 @@ Version: 1.7.2
 Author URI: http://ma.tt/
 */
 
+/* =====[ ACTIVATION ]===== */
+function uvm_registration_form_activate() {
+
+    //add_option( 'Activated_Plugin', 'UVM-Reg' );
+	echo "Activated <br>";
+    /* activation code here */
+    uvm_registration_setup();
+
+    // Clear the permalinks after the post type has been registered.
+    flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'uvm_registration_form_activate' );
+
 function hello_dolly_get_lyric() {
 	/** These are the lyrics to Hello Dolly */
-	$lyrics = "Hello, Dolly
+	$lyrics = "Hello, Scupinazzu
 Well, hello, Dolly
 It's so nice to have you back where you belong
 You're lookin' swell, Dolly

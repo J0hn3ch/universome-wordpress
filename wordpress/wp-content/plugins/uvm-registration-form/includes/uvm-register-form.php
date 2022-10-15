@@ -1,8 +1,11 @@
 <?php
-include "./uvm-register-user.php";
+require_once (dirname(__FILE__) . '/uvm-register-user.php');
+
+function uvm_register_form_enqueue_style() {
+    wp_enqueue_style( 'uvm-registration-style'); 
+}
 
 function uvm_registration_form() {
-    echo "Test Text 1";
     // only show the registration form to user with role 'Direttore'
     // IMPORTANT: implent check for users Direttore
 
@@ -12,6 +15,7 @@ function uvm_registration_form() {
         // if enabled
         //if($registration_enabled) {
             $output = uvm_registration_fields();
+            add_action( 'wp_enqueue_scripts', 'uvm_register_form_enqueue_style' );
         //} else {
             //$output = __('User registration is not enabled');
         //}
@@ -22,28 +26,31 @@ function uvm_registration_form() {
 function uvm_registration_fields() {
 
     ob_start(); ?>
-    <h3 class="uvm_header"><?php _e('Registrazione redattori'); ?></h3>
 
     <?php
     // show any error messages after form submission
-    uvm_register_messages(); ?>
+    uvm_register_messages(); 
+    ?>
 
-    <form id="uvm_registration_form" class="uvm_form" action="" method="POST">
-        <fieldset>
-            <p>
-                <label for="uvm_user_Login"><?php _e('Nome utente'); ?></label>
-                <input name="uvm_user_login" id="uvm_user_login" class="uvm_user_login" type="text" size="25"/>
-            </p>
-            <p>
-                <label for="uvm_user_email"><?php _e('Email'); ?></label>
-                <input name="uvm_user_email" id="uvm_user_email" class="uvm_user_email" type="email"/>
-            </p>
-            <p>
-                <input type="hidden" name="uvm_csrf" value="<?php echo wp_create_nonce('uvm-csrf'); ?>"/>
-                <input type="submit" value="<?php _e('Registra'); ?>"/>
-            </p>
-        </fieldset>
-    </form>
+    <div id="login-form">
+        <form id="uvm_registration_form" class="uvm_form" action="" method="POST">
+            <fieldset>
+                <p id="log-username">
+                    <label for="uvm_user_Login"><?php _e('Nome utente'); ?></label>
+                    <input id="log" title="<?php _eti( 'Username' ) ?>" name="uvm_user_login" id="uvm_user_login" class="uvm_user_login" type="text" placeholder="Nome utente" size="40"/>
+                </p>
+                <p id="log-username">
+                    <label for="uvm_user_email"><?php _e('Email'); ?></label>
+                    <input id="log" name="uvm_user_email" id="uvm_user_email" class="uvm_user_email" type="email" placeholder="Email"/>
+                </p>
+                <p>
+                    <input type="hidden" name="uvm_csrf" value="<?php echo wp_create_nonce('uvm-csrf'); ?>"/>
+                    <input type="submit" class="login-button" value="<?php _e('Registra'); ?>"/>
+                </p>
+            </fieldset>
+        </form>
+    </div>
+
     <?php
     return ob_get_clean();
 }

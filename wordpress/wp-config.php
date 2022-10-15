@@ -31,7 +31,7 @@ define( 'DB_USER', 'dbadmin_wordpress' );
 define( 'DB_PASSWORD', 'WP2022' );
 
 /** Hostname del database */
-define( 'DB_HOST', '172.21.0.2' );
+define( 'DB_HOST', '172.27.0.2' );
 
 /** Charset del Database da utilizzare nella creazione delle tabelle. */
 define( 'DB_CHARSET', 'utf8mb4' );
